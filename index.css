@@ -28,6 +28,8 @@ nav .logo {
     margin-left: 40px;
     font-size: 30px;
     color: rgb(65 212 255);
+    /* background-color: yellow; */
+    width: 50%;
 }
 
 .links {
@@ -112,7 +114,6 @@ svg {
     border-radius: 20px;
     background-image: url("./imgs/deepak\ image.png");
     background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .right-pane .hey {
@@ -134,11 +135,79 @@ svg {
 .content-intro, .content-subintro {
     padding: 10px 0;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     color: white;
+    text-align: justify;
 }
 
 .content-subintro span {
     font-weight: bold;
     color: rgb(65 212 255);
+}
+
+.right-pane .prof-head, .right-pane .ach-head, .right-pane .hob-head {
+    color: white;
+    font-family: 'Zilla Slab', serif;
+    font-weight: bold;
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.prof-content , .ach-content, .hob-content{
+    margin: 20px 0;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.prof-content span, .ach-content span, .hob-content span {
+    color: rgb(65 212 255);
+    font-weight: bold;
+}
+
+.ach-content ul , .hob-content ul{
+    margin-left: 18px;
+}
+
+.ico {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+    background-size: contain;
+}
+
+.spotify{
+    background: url("./icons/spotify.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.gaming{
+    background: url("./icons/gamepad-solid.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.book{
+    background: url("./icons/book-solid.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.coding {
+    background: url("./icons/code-solid.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.bulb {
+    background: url("./icons/lightbulb-solid.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.bulb:hover,.bulb:focus,
+.coding:hover,.coding:focus,
+.book:hover,.book:focus,
+.gaming:hover,.gaming:focus,
+.spotify:hover,.spotify:focus
+{
+  filter: invert(71%) sepia(96%) saturate(4274%) hue-rotate(83deg) brightness(126%) contrast(121%);
 }

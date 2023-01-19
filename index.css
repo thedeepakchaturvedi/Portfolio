@@ -5,16 +5,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
+#nav-container {
+    position:fixed;
+    z-index: 2;
+}
 
 nav {
     height: 70px;
-    width : 100vwpx;
+    width : 100vw;
     background-color: rgb(49, 54, 63);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
 }
+
+
 
 body {
     background-color: rgb(36, 41, 46);
@@ -25,33 +35,35 @@ body {
 nav .logo {
     font-family: 'Zilla Slab', serif;
     font-weight: 500;
-    margin-left: 40px;
     font-size: 30px;
     color: rgb(65 212 255);
     /* background-color: yellow; */
     width: 50%;
+    margin-left: 5vw;
 }
 
 .links {
-    width: 50%;
+    width: 40%;
     font-family: 'Zilla Slab', serif;
     font-size: 18px;
-    margin-right: 10vw;
     font-weight: bold;
     /* background-color: yellow; */
 }
 
 .lin {
     display: flex;
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
     flex-direction: row-reverse;
-    gap: 70px;
     list-style: none;
 }
 
 .lin li a{
     text-decoration: none;
     color: white;
+}
+
+.lin li a:hover, .lin li a:active, .lin li a:focus {
+    color: rgb(65 212 255);
 }
 .custom-shape {
     display: flex;
@@ -67,6 +79,7 @@ svg {
     transform: rotateY(180deg);
     fill: rgb(49, 54, 63);
     min-width: 150% !important;
+
 }
 
 /* navbar is completed */
@@ -82,7 +95,51 @@ svg {
     /* justify-content: space-between; */
     gap: 80px;
     width: 90vw;
+    margin-top: 150px;
 }
+
+
+@media only screen and (max-width: 500px) {
+    .content-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .links {
+        width: 50%;
+    }
+
+    .left-pane-content .img-box{
+        width: 180px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+    .lin {
+        flex-direction: column;
+        float: right;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-right: 5vw;
+    }
+  }
+
+
+@media only screen and (max-width: 800px) {
+    .content-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .logo {
+        font-size: 26px;
+    }
+  }
+
 .left-pane,.right-pane {
     background-color: rgb(49, 54, 63);
     border-radius: 20px;
@@ -91,13 +148,17 @@ svg {
 }
 
 .left-pane {
-    width: fit-content;
+    max-width: 300px;
+    margin: 10px;
 }
 
 .right-pane {
-    width: 800px;
+    max-width: 800px;
     padding: 20px;
 }
+
+/* left-pane */
+
 .left-pane-content {
     /* background-color: gray; */
     margin: 20px;
@@ -116,6 +177,122 @@ svg {
     background-size: contain;
 }
 
+.left-pane-content .name, .skill-head {
+    font-family: 'Zilla Slab', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.left-pane .name .designation {
+    font-size: 14px;
+    font-style: italic;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.prof-links-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 34px;
+    background-color: rgb(87, 86, 86);
+    border-radius: 50%;
+}
+
+.icon-container img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.icon-container img:hover {
+    filter: invert(60%) sepia(100%) saturate(300%) hue-rotate(163deg) brightness(170%) contrast(101%);
+    transform: scale(1.2);
+}
+
+.skill-head {
+    margin-bottom: 10px;
+}
+
+.left-pane-content .hr-line{
+    height: 1px;
+    background: white;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.skill:hover {
+    transform: translate(0, -5px);
+}
+
+.skill img {
+    width: 40px;
+    height: 40px;
+}
+
+/* hover text on skills  */
+
+.skill div{
+    position: absolute;
+    top: -35px;
+    left: 0;
+    background: rgb(36, 41, 46);
+    color: rgb(238, 238, 238);
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    -webkit-transition: visibility 0s, opacity 0.5s linear; 
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.skill:hover div{
+    min-width: 45px;
+    text-align: center;
+    margin-bottom: 50px;
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+/* right-pane */
+
 .right-pane .hey {
     width: 38px;
 }
@@ -125,8 +302,8 @@ svg {
     color: white;
     font-family: 'Zilla Slab', serif;
     font-weight: bold;
-    font-size: 38px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin: 30px 0;
 }
 
 .name {
@@ -145,12 +322,13 @@ svg {
     color: rgb(65 212 255);
 }
 
+
 .right-pane .prof-head, .right-pane .ach-head, .right-pane .hob-head {
     color: white;
     font-family: 'Zilla Slab', serif;
     font-weight: bold;
-    font-size: 38px;
-    margin: 10px 0;
+    font-size: 32px;
+    margin: 30px 0;
 }
 
 .prof-content , .ach-content, .hob-content{
@@ -209,5 +387,34 @@ svg {
 .gaming:hover,.gaming:focus,
 .spotify:hover,.spotify:focus
 {
-  filter: invert(71%) sepia(96%) saturate(4274%) hue-rotate(83deg) brightness(126%) contrast(121%);
+  filter: invert(60%) sepia(100%) saturate(300%) hue-rotate(163deg) brightness(170%) contrast(101%);
+}
+
+.footer {
+    height: 40px;
+    background-color: rgb(49, 54, 63);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+
+    font-family: 'Zilla Slab', serif;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content span {
+    font-weight: bold;
+    color: rgb(65 212 255);
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
 }
